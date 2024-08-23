@@ -11,9 +11,9 @@ class AtmMini{
         moneyprocess();
     }
 
-    int pin = 1234;
-    int amount = 1000;
-    int p;
+   private int pin = 1234;
+   private int amount = 1000;
+   int p;
 
     Scanner s=new Scanner(System.in);
 
