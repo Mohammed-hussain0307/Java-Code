@@ -1,0 +1,434 @@
+package miniproject;
+
+import java.util.Scanner;
+
+public class LibraryTask {
+	
+	Scanner s = new Scanner(System.in);
+	int bookList = 0;
+	
+	String ece[] = {"ece-1", "ece-2", "ece-3", "ece-4", "ece-5", "", "", "","", ""};
+	String eee[] = {"eee-1", "eee-2", "eee-3", "eee-4", "eee-5", "", "", "","", ""};
+	String mech[] = {"mech-1", "mech-2", "mech-3", "mech-4", "mech-5","", "", "","", ""};
+	String cse[] = {"cse-1", "cse-2", "cse-3", "cse-4", "cse-5", "", "", "","", ""};
+	
+	void ecebooks() {
+		
+		System.out.println("Which book you want?");
+		
+		int user =s.nextInt();
+				
+			if(user <= bookList) {
+			for(int i=user; i<ece.length; i++) {
+				ece[i-1] = ece[i];
+			}
+			//bookList--;
+			System.out.println("Successfully");
+			}
+			else {
+				System.out.println("Only choosing book in list");
+				ecebooks();
+			}
+			bookList = 0;
+			student();
+}
+	
+	void eeebooks() {
+		
+		System.out.println("Which book you want?");
+		
+		int user =s.nextInt();
+				
+			if(user <= bookList) {
+			for(int i=user; i<eee.length; i++) {
+				eee[i-1] = eee[i];
+			}
+			//bookList--;
+			System.out.println("Successfully");
+			}
+			else {
+				System.out.println("Only choosing book in list");
+				eeebooks();
+			}
+			bookList = 0;
+		student();
+}
+	
+	void mechbooks() {
+		
+		System.out.println("Which book you want?");
+		
+		int user =s.nextInt();
+	
+			if(user <= bookList) {
+			for(int i=1; i<mech.length; i++) {
+				mech[i-1] = mech[i];
+			}
+			//bookList--;
+			System.out.println("Successfully");
+			}
+			else {
+				System.out.println("Only choosing book in list");
+				mechbooks();
+			}
+			bookList = 0;
+			student();
+}
+	
+	void csebooks() {
+		
+		System.out.println("Which book you want?");
+		
+		int user =s.nextInt();
+				
+			if(user <= bookList) {
+			for(int i=user; i<cse.length; i++) {
+				cse[i-1] = cse[i];
+			}
+			//bookList--;
+			System.out.println("Successfully");
+			}
+			else {
+				System.out.println("Only choosing book in list");
+				csebooks();
+			}
+			bookList = 0;
+			student();
+}
+	
+	void student() {
+		
+		System.out.println("Do you want\n 1.Take \n 2.Return \n 3.exit");
+		
+		int user = s.nextInt();
+		switch (user) {	
+		case 1:{
+				System.out.println("Which department books do you want? \n 1.ECE \n 2.EEE\n 3.MECH\n 4.CSE");
+			
+				int cbook = s.nextInt();
+				
+				switch (cbook) {
+
+				case 1:{
+					for(int i=0; i<ece.length; i++) {
+						if(!(ece[i].equals(""))) {
+							System.out.println(i+1 +"."+ece[i]);
+							bookList++;
+						}
+					}
+					ecebooks();
+				}
+				break;
+				
+				case 2:{
+					for(int i=0; i<eee.length; i++) {
+						if(!(eee[i].equals(""))) {
+							System.out.println(i+1 +"."+eee[i]);
+							bookList++;
+						}
+					}
+					eeebooks();
+				}
+				break;
+				case 3:{
+					for(int i=0; i<mech.length; i++) {
+						if(!(mech[i].equals(""))) {
+							System.out.println(i+1 +"."+mech[i]);
+							bookList++;
+						}
+					}
+					mechbooks();
+				}
+				break;
+				case 4:{
+					for(int i=0; i<cse.length; i++) {
+						if(!(cse[i].equals(""))) {
+							System.out.println(i+1 +"."+cse[i]);
+							bookList++;
+						}
+					}
+					csebooks();
+				}
+				break;
+				default:
+				{
+					System.out.println("Choose correct department!..");
+					student();
+				}
+		}
+	}
+		break;
+		case 2:{
+			
+			System.out.println("Which department books do you want? \n 1.ECE \n 2.EEE\n 3.MECH\n 4.CSE");
+			
+			int cbook = s.nextInt();
+			
+			switch (cbook) {
+
+			case 1:{
+				System.out.println("Enter book name");
+				String book = s.next();
+				for(int i=0; i<ece.length; i++) {
+					if(ece[i].equals("")) {
+						ece[i] = book;
+						break;
+					}
+				}
+				System.out.println("Successfully return");
+				student();
+			}
+			break;
+			
+			case 2:{
+				System.out.println("Enter book name");
+				String book = s.next();
+				for(int i=0; i<eee.length; i++) {
+					if(eee[i].equals("")) {
+						eee[i] = book;
+						break;
+					}
+				}
+				System.out.println("Successfully return");
+				student();
+			}
+			break;
+			case 3:{
+				System.out.println("Enter book name");
+				String book = s.next();
+				for(int i=0; i<mech.length; i++) {
+					if(mech[i].equals("")) {
+						mech[i] = book;
+						break;
+					}
+				}
+				System.out.println("Successfully return");
+				student();
+			}
+			break;
+			case 4:{
+				System.out.println("Enter book name");
+				String book = s.next();
+				for(int i=0; i<cse.length; i++) {
+					if(cse[i].equals("")) {
+						cse[i] = book;
+						break;
+					}
+				}
+				System.out.println("Successfully return");
+				student();
+			}
+			break;
+			default:
+			{
+				System.out.println("Choose correct department!..");
+				student();
+			}
+	}
+	}
+		break;
+		case 3:{
+			welcome();
+		}
+		break;
+		default:{
+			System.out.println("enter correct input!..");
+			student();
+		}
+}	
+}
+	
+	void staff() {
+		
+		System.out.println("Do you want to \n 1.Add\n 2.View\n 3.exit");
+		int staffIn = s.nextInt();
+		
+		switch(staffIn) {
+		case 1:{
+			
+			System.out.println("Which department books do you want? \n 1.ECE \n 2.EEE\n 3.MECH\n 4.CSE");
+			
+			int cbook = s.nextInt();
+			
+			switch (cbook) {
+
+			case 1:{
+				System.out.println("Enter book name");
+				String book = s.next();
+				for(int i=0; i<ece.length; i++) {
+					if(ece[i].equals("")) {
+						ece[i] = book;
+						break;
+					}
+				}
+				System.out.println("Added Successfully");
+			}
+			break;
+			
+			case 2:{
+				System.out.println("Enter book name");
+				String book = s.next();
+				for(int i=0; i<eee.length; i++) {
+					if(eee[i].equals("")) {
+						eee[i] = book;
+						break;
+					}
+				}
+				System.out.println("Added Successfully");
+			}
+			break;
+			case 3:{
+				System.out.println("Enter book name");
+				String book = s.next();
+				for(int i=0; i<mech.length; i++) {
+					if(mech[i].equals("")) {
+						mech[i] = book;
+						break;
+					}
+				}
+				System.out.println("Added Successfully");
+			}
+			break;
+			case 4:{
+				System.out.println("Enter book name");
+				String book = s.next();
+				for(int i=0; i<cse.length; i++) {
+					if(cse[i].equals("")) {
+						cse[i] = book;
+						break;
+					}
+				}
+				System.out.println("Added Successfully");
+			}
+			break;
+			default:
+			{
+				System.out.println("Choose correct department!..");
+				staff();
+			}
+	}	
+	}
+		staff();
+		break;
+		case 2:{
+			
+			System.out.println("Which department books do you want? \n 1.ECE \n 2.EEE\n 3.MECH\n 4.CSE");
+			
+			int cbook = s.nextInt();
+			
+			switch (cbook) {
+
+			case 1:{
+				for(int i=0; i<ece.length; i++) {
+					if(!(ece[i].equals(""))) {
+						System.out.println(i+1 +"."+ece[i]);
+					}
+				}
+			}
+			break;
+			
+			case 2:{
+				for(int i=0; i<eee.length; i++) {
+					if(!(eee[i].equals(""))) {
+						System.out.println(i+1 +"."+eee[i]);
+					}
+				}
+			}
+			break;
+			case 3:{
+				for(int i=0; i<mech.length; i++) {
+					if(!(mech[i].equals(""))) {
+						System.out.println(i+1 +"."+mech[i]);
+					}
+				}
+			}
+			break;
+			case 4:{
+				for(int i=0; i<cse.length; i++) {
+					if(!(cse[i].equals(""))) {
+						System.out.println(i+1 +"."+cse[i]);
+					}
+				}
+			}
+			break;
+			default:
+			{
+				System.out.println("Choose correct department!..");
+				staff();
+			}
+	}
+}
+		staff();
+		break;
+		case 3:{
+			welcome();
+		}
+		break;
+		default:{
+			System.out.println("Enter correct input!..");
+			staff();
+		}
+}
+}
+	
+	void welcome() {
+		
+		System.out.println("Welcome to our library");
+		System.out.println("1.Staff\n2.Student\n3.Exit");
+		
+		int staffid = 2705;
+		int stdid = 3720;
+		
+		int user = s.nextInt();
+		
+		switch (user) {
+		case 1:{
+			
+			System.out.print("Enter your library id:");
+			int staffid1 = s.nextInt();
+			if(staffid == staffid1) {
+				staff();				
+			}
+			else {
+				System.out.println("Enter your correct id");
+				welcome();
+			}
+			
+		}
+		break;
+		case 2: {
+			
+				System.out.print("Enter your library id:");
+				int stdid1 = s.nextInt();
+				if(stdid == stdid1) {
+					
+					student();					
+				}
+				else {
+					System.out.println("Enter your correct id");
+					welcome();
+				}
+			
+		}
+		break;
+		case 3:
+		{
+			System.out.println("Thankyou for visiting");
+		}
+		break;
+		default: {
+			
+			System.out.println("Enter only 1 to 3");
+			welcome();
+		}
+		}	
+		}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LibraryTask lt= new LibraryTask();
+		lt.welcome();
+		
+	}
+
+}
